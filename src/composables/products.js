@@ -1,35 +1,20 @@
 import useApi from "@/composables/useApi";
 
-const showAll = async() => {
+const handleApiCall = async (apiCall) => {
   try {
-    return await useApi.getInstance("products").showAll();
-  } catch (e) {
-    console.log(e)
-  }
-}
-
-const remove = async(docs) => {
-  try {
-    return await useApi.getInstance('products').delete(docs)
+    return await apiCall();
   } catch (error) {
-    console.log(error)
+    console.error("API call failed:", error);
+    throw error;
   }
-}
-const show = (id) => {}
-const update = async(data) => {
-  try {
-    return await useApi.getInstance("products").update(data);
-  } catch (e) {
-    console.log(e)
-  }
-}
+};
 
-const create = async(data) => {
-  try {
-    return await useApi.getInstance("products").add(data);
-  } catch (e) {
-    console.log(e)
-  }
-}
+const showAll = () => handleApiCall(() => useApi.getInstance("products").showAll());
 
-export { showAll, remove, show, update, create }
+const remove = (docs) => handleApiCall(() => useApi.getInstance("products").delete(docs));
+
+const update = (data) => handleApiCall(() => useApi.getInstance("products").update(data));
+
+const create = (data) => handleApiCall(() => useApi.getInstance("products").add(data));
+
+export { showAll, remove, update, create };
