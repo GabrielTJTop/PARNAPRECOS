@@ -1,51 +1,40 @@
 <template>
   <v-form>
     <v-container>
+      <h1>Adicionar item</h1>
       <v-row>
         <v-col
           cols="12"
           md="4"
         >
           <v-text-field
-            v-model="firstname"
+            v-model="nome"
             :counter="10"
-            label="First name"
+            clearable
+            label="Nome produto"
           ></v-text-field>
+          <v-file-input 
+            label="Insira uma imagem" 
+            variant="solo-filled"
+          ></v-file-input>
+          <v-btn color="success"
+            @click="addProductSupabase"
+          >Adicionar</v-btn>
         </v-col>
-
-        <!-- <v-col
-          cols="12"
-          md="4"
-        >
-          <v-text-field
-            v-model="lastname"
-            :counter="10"
-            :rules="nameRules"
-            label="Last name"
-            required
-          ></v-text-field>
-        </v-col>
-
-        <v-col
-          cols="12"
-          md="4"
-        >
-          <v-text-field
-            v-model="email"
-            :rules="emailRules"
-            label="E-mail"
-            required
-          ></v-text-field>
-        </v-col> -->
       </v-row>
     </v-container>
   </v-form>
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
-const firstname = ref()
-console.log (firstname.value)
-onMounted(() => {
-})
+
+import { create } from "@/composables/products";
+import { ref } from "vue";
+
+ const nome = ref()
+   const  addProductSupabase = async () => {
+     const payload = await create({
+       name: nome.value,
+     })
+   }
 </script>
