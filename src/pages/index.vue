@@ -61,8 +61,6 @@
 </template>
 <script setup>
 import Produtos from '@/components/produtos.vue';
-import { useRouter } from 'vue-router';
-
 
 </script>
 <script>
