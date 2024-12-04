@@ -55,9 +55,14 @@
         </v-carousel>
       </v-col>
     </v-row>
+
+    <Produtos></Produtos>
   </v-container>
 </template>
+<script setup>
+import Produtos from '@/components/produtos.vue';
 
+</script>
 <script>
 export default {
   data() {

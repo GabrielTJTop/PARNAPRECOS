@@ -24,6 +24,11 @@
             clearable
             label="Valor"
           >R$</v-text-field>
+          <v-text-field
+            v-model="valormaior"
+            clearable
+            label="maior Valor"
+          >R$</v-text-field>
 
           <v-text-field
             v-model="imgurl"
@@ -49,12 +54,14 @@ import { ref } from "vue";
  const descricao = ref('')
  const valor = ref(0)
  const imgurl = ref('')
+ const valormaior = ref(0)
    const  addProductSupabase = async () => {
      const payload = await create({
        name: nome.value,
        description: descricao.value,
        price: valor.value,
-       image_url: imgurl.value
+       image_url: imgurl.value,
+       pricehigher: valormaior.value
      })
    }
 </script>

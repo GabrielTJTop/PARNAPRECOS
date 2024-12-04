@@ -7,7 +7,6 @@
           <v-icon icon="mdi-magnify" style="font-size: 18px;"></v-icon>
           PARNAPREÇOS
         </v-app-bar-title>
-        <v-icon icon="mdi-magnify" color="info"></v-icon>
       </v-app-bar>
   
       <v-navigation-drawer expand-on-hover rail>

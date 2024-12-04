@@ -1,6 +1,6 @@
 <template>
     <v-container>
-      <div v-for="product in products" :key="id" class="ma-4">
+      <div v-for="product in products" :key="id" class="ma-4 d-flex flex-row mb-6">
         <v-card width="600px" class="rounded-lg">
           <v-img
                 :src="'{{ product.image_url }}'"
@@ -15,6 +15,9 @@
           </div>
           <div class="text-h5">
             R${{ product.price }}
+          </div>
+          <div class="text-h2">
+            R${{ product.pricehigher }}
           </div>
           </v-card-title>
           <v-card-subtitle class="ma-2 pt-2">{{ product.description }}</v-card-subtitle>
