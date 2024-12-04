@@ -17,4 +17,5 @@ const update = (data) => handleApiCall(() => useApi.getInstance("products").upda
 
 const create = (data) => handleApiCall(() => useApi.getInstance("products").add(data));
 
+
 export { showAll, remove, update, create };

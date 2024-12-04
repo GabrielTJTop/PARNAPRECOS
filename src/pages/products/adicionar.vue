@@ -13,13 +13,25 @@
             clearable
             label="Nome produto"
           ></v-text-field>
-          <v-file-input 
-            label="Insira uma imagem" 
-            variant="solo-filled"
-          ></v-file-input>
+
+          <v-text-field
+            v-model="descricao"
+            :counter="10"
+            clearable
+            label="Descrição"
+          ></v-text-field>
+
+          <v-text-field
+            v-model="valor"
+            :counter="10"
+            clearable
+            label="Valor"
+          ></v-text-field>
+      
           <v-btn color="success"
             @click="addProductSupabase"
           >Adicionar</v-btn>
+          
         </v-col>
       </v-row>
     </v-container>
@@ -35,6 +47,8 @@ import { ref } from "vue";
    const  addProductSupabase = async () => {
      const payload = await create({
        name: nome.value,
+       description: descricao.value,
+       price: valor.value
      })
    }
 </script>
