@@ -35,7 +35,7 @@
             <p>Ajude adicionando informações de produtos de uma loja.</p>
           </v-card-text>
           <v-card-actions>
-            <v-btn color="blue" text to="/stores">Cadastrar Loja</v-btn>
+            <v-btn color="blue" text to="/stores/adicionar">Cadastrar Loja</v-btn>
           </v-card-actions>
         </v-card>
       </v-col>
@@ -61,6 +61,8 @@
 </template>
 <script setup>
 import Produtos from '@/components/produtos.vue';
+import { useRouter } from 'vue-router';
+
 
 </script>
 <script>
