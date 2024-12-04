@@ -4,7 +4,7 @@
         <v-col>
           <h1 class="text-center">Bem-vindo ao PARNAPREÇOS</h1>
           <p class="text-center">
-            Comprare aqui o preços de produtos em lojas físicas de Parnaíba/PI.
+            Compare aqui o preços de produtos em lojas físicas de Parnaíba/PI.
           </p>
         </v-col>
       </v-row>
