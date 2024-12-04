@@ -1,30 +1,28 @@
 <template>
   <v-app>
-    <v-main>
-      <v-app-bar scroll-behavior="collapse" scroll-threshold="121" flat>
-        
-        <v-app-bar-title style="font-family: Cochin; font-size: 22px;">
-          <v-icon icon="mdi-magnify" style="font-size: 18px;"></v-icon>
-          PARNAPREÇOS
-        </v-app-bar-title>
+    <v-app-bar scroll-behavior="collapse" scroll-threshold="121" flat>
+      
+      <v-app-bar-title style="font-family: Cochin; font-size: 22px;">
+        <v-icon icon="mdi-magnify" style="font-size: 18px;"></v-icon>
+        PARNAPREÇOS
+      </v-app-bar-title>
 
-        <v-icon icon="mdi-magnify" color="info"></v-icon>
-      </v-app-bar>
+      <v-icon icon="mdi-magnify" color="info"></v-icon>
+    </v-app-bar>
 
-      <v-navigation-drawer expand-on-hover rail>
-        <v-list-item
-          prepend-icon="mdi-home"
-          title="Home"
-          :to="'/'"
-        ></v-list-item>
-        <v-list density="compact">
-          <v-list-group value="produtos">
-            <template v-slot:activator="{ props }">
-              <v-list-item v-bind="props" title="Produtos" prepend-icon="mdi-store"></v-list-item>
-            </template>
-
+    <v-navigation-drawer expand-on-hover rail>
+      <v-list-item
+        prepend-icon="mdi-home"
+        title="Home"
+        :to="'/'"
+      ></v-list-item>
+      <v-list density="compact">
+        <v-list-group value="produtos">
+          <template v-slot:activator="{ props }">
+            <v-list-item v-bind="props" title="Produtos" prepend-icon="mdi-store"></v-list-item>
             <v-list-group value="categorias">
               <template v-slot:activator="{ props }">
+                
               </template>
               <v-list-item
                 v-for="(categoria, i) in categorias"
@@ -36,15 +34,20 @@
                 <v-list-item-title>{{ categoria.title }}</v-list-item-title>
               </v-list-item>
             </v-list-group>
-          </v-list-group>
-        </v-list>
-      </v-navigation-drawer>
+          </template>
+
+        </v-list-group>
+      </v-list>
+    </v-navigation-drawer>
+    <v-main>
+    <router-view></router-view>
     </v-main>
   </v-app>
 </template>
 
 <script setup>
  const categorias = [
-   { title: 'Eletrônicos', icon: '', to: '/categorias/eletronicos' }
+   { title: 'Eletrônicos', icon: '', to: '/categorias/eletronicos' },
+   { title: 'roupas', icon: '', to: '/categorias/roupas' }
  ]
 </script>

@@ -1,6 +1,8 @@
 <template>
-  <div>aaaaaaaaaaaaa</div>
-
+  <v-container>
+    oi
+    
+  </v-container>
 </template>
 
 <script setup>
