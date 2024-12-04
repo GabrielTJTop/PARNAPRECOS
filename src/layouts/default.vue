@@ -28,8 +28,7 @@
               :title="categoria.title"
               :value="categoria.title"
               :to="categoria.to"
-            >
-              
+            >      
             </v-list-item>
           </v-list-group>
         </v-list>
