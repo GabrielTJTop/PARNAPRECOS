@@ -7,7 +7,6 @@
           <v-icon icon="mdi-magnify" style="font-size: 18px;"></v-icon>
           PARNAPREÇOS
         </v-app-bar-title>
-  
         <v-icon icon="mdi-magnify" color="info"></v-icon>
       </v-app-bar>
   
@@ -22,6 +21,12 @@
             <template v-slot:activator="{ props }">
               <v-list-item v-bind="props" title="Produtos" prepend-icon="mdi-store"></v-list-item>
             </template>
+            <v-list-item
+              prepend-icon="mdi-plus"
+              :to="'/products/adicionar'"
+            >
+            adicionar produtos
+            </v-list-item>
             <v-list-item 
               v-for="(categoria, i) in categorias"
               :key="i"

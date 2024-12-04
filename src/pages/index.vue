@@ -1,10 +1,8 @@
 <template>
-  <v-container>
-    oi
-    
-  </v-container>
+  <Produtos></Produtos>
 </template>
 
 <script setup>
-  //
+import Produtos from '@/components/produtos.vue';
+
 </script>
